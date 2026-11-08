@@ -4,6 +4,11 @@ A personal applied data science project using **90 operating days** of recorded 
 
 Revenue includes actual electronic receipts and estimated cash, **excludes Alipay**, and is measured in CNY. The analysis preserves the original amounts. [Data definitions and limitations](data/README.md).
 
+## Key findings
+
+- **September’s recorded revenue grew mainly on weekdays.** Compared with July–August, September’s weekday daily mean rose from **470.01 to 602.45 CNY (+28.18%)**, while the weekend mean fell from **376.18 to 371.00 CNY (−1.38%)**.
+- **Method C had the lowest overall forecast error.** Averaging the four most recent observations of the same day type gave an MAE of **77.09 CNY** across the **30 September operating days** in the backtest.
+
 ## Questions
 
 1. How does daily revenue vary, and how do weekday and weekend distributions differ?
@@ -45,8 +50,6 @@ Paths are resolved relative to the script, so changing the working directory doe
 | July | 29 | 12,851.50 | 443.16 |
 | August | 31 | 13,754.00 | 443.68 |
 | September | 30 | 16,222.00 | 540.73 |
-
-Compared with pooled July–August daily records, September's weekday mean increased from **470.01 to 602.45 CNY (+28.18%)**. Its weekend mean changed from **376.18 to 371.00 CNY (−1.38%)**. These describe the observed groups; they do not establish a cause.
 
 The July–August baseline is calculated directly from the relevant daily records, not an unweighted average of the two monthly means. Weekdays are Monday–Friday and weekends are Saturday–Sunday, without holiday or adjusted-workday corrections.
 
@@ -94,7 +97,7 @@ For this dataset, all **30 September dates** are comparable: **22 weekdays and 8
 
 ![Overall September backtest MAE for methods A, B and C](figures/05_backtest_mae.png)
 
-Method C has the lowest overall MAE in this historical test, while method B has the lowest weekend MAE. This does not establish that any method is universally best or will perform best on future data. MAE is an average error, not a guaranteed interval around a future prediction.
+Method B had the lowest weekend MAE at 32.86 CNY. The rankings describe performance in this September backtest. MAE measures average prediction error.
 
 ## Output tables
 
